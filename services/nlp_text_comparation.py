@@ -5,6 +5,8 @@ from sentence_transformers import SentenceTransformer, util
 from utils import Logger
 
 logger = Logger()
+
+
 class CardMatcher:
     def __init__(
         self,
@@ -113,13 +115,12 @@ class CardMatcher:
         # Compara o embedding extraído com os embeddings das cartas
         for card in self.cards:
             card_embedding = cached_embeddings[card["slug"]]
-            similarity = util.pytorch_cos_sim(extracted_embedding, card_embedding).item()
+            similarity = util.pytorch_cos_sim(
+                extracted_embedding, card_embedding
+            ).item()
 
             # Adiciona a carta e sua similaridade à lista
-            similarities.append({
-                "card": card,
-                "similarity": similarity
-            })
+            similarities.append({"card": card, "similarity": similarity})
 
         # Ordena as cartas pela similaridade em ordem decrescente
         similarities = sorted(similarities, key=lambda x: x["similarity"], reverse=True)
@@ -129,7 +130,8 @@ class CardMatcher:
 
         # Atualiza as cartas retornadas com a confiança (similaridade)
         top_cards = [
-            {**match["card"], "confidence": match["similarity"]} for match in top_matches
+            {**match["card"], "confidence": match["similarity"]}
+            for match in top_matches
         ]
 
         logger.info(f"Top {top_n} matches found")

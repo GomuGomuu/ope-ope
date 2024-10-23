@@ -39,6 +39,7 @@ card_matcher.cache_card_embeddings()
 
 logger = Logger()
 
+
 # Função para verificar se o arquivo tem uma extensão permitida
 def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS

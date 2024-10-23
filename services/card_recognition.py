@@ -16,6 +16,7 @@ genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 
 logger = Logger()
 
+
 def create_cache(cache_name):
     with open("../data/merry_cards_data_dump.json") as f:
         json_data = json.load(f)
@@ -117,8 +118,7 @@ def get_card_from_ia(cache_name, data_fragment):
             HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
             HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_NONE,
             HarmCategory.HARM_CATEGORY_UNSPECIFIED: HarmBlockThreshold.BLOCK_NONE,
-        }
-        ,
+        },
         generation_config=genai.GenerationConfig(
             response_mime_type="application/json", response_schema=ResponseFormat
         ),
