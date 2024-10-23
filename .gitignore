@@ -1,0 +1,56 @@
+# Ignore the .idea directory (PyCharm project files)
+.idea/
+
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment directories
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Linux system files
+*~
+
+# Ignore log files
+*.log
+
+# Ignore compiled C extensions
+*.so
+
+# Ignore coverage reports
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+
+# Ignore mypy type checker reports
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ignore Pyre type checker reports
+.pyre/
+
+# Ignore Pylint reports
+.pylint.d/
+
+# Ignore Bandit security reports
+.bandit/
+
+# Ignore pytest cache
+.pytest_cache/
+
+# Ignore local configuration files
+*.local
+
+uploads/recognize/
