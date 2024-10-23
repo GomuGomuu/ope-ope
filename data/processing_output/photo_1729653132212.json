@@ -1,0 +1,50 @@
+{
+    "extracted_data": {
+        "attack": 11000,
+        "cost": 10,
+        "description": "This card can attack on the turn in which it is played. When your opponent activates a Blocker, K.O. up to 1 of your opponent's Characters with 8000 power or less.",
+        "name": "Monkey D.Luffy",
+        "tribe": "Straw Hat Crew",
+        "type": "Character"
+    },
+    "search_result": {
+        "possible_cards": [
+            {
+                "api_url": "http://10.0.0.128:8000/cards/ST10-006/",
+                "confidence": 1.0,
+                "illustrations": [
+                    {
+                        "code": "ST10-006_p1",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-70c762a2-d30c-46bd-a9c5-10cb8c32cb25-st10-006-p1-png-240619.png"
+                    },
+                    {
+                        "code": "ST10-006",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-bbfbbe68-9a46-405b-8023-9d7120d6c507-st10-006-png-240619.png"
+                    }
+                ],
+                "name": "Monkey.D.Luffy",
+                "slug": "ST10-006"
+            },
+            {
+                "api_url": "http://10.0.0.128:8000/cards/OP05-119/",
+                "confidence": 0.6,
+                "illustrations": [
+                    {
+                        "code": "OP05-119_p2",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-5e0ee589-5d34-4cec-be87-4bff89ff1908-op05-119-p2-png-240619.png"
+                    },
+                    {
+                        "code": "OP05-119_p1",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-a0027cbf-e295-460d-993c-0b4b63509f6f-op05-119-p1-png-240619.png"
+                    },
+                    {
+                        "code": "OP05-119",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-795b0ea5-ac04-4767-a3ba-9a2324a200d2-op05-119-png-240619.png"
+                    }
+                ],
+                "name": "Monkey.D.Luffy",
+                "slug": "OP05-119"
+            }
+        ]
+    }
+}

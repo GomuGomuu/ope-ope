@@ -1,5 +1,6 @@
 import json
 import random
+import time
 
 from flask import (
     Flask,
@@ -14,7 +15,10 @@ from werkzeug.utils import secure_filename
 from functools import wraps
 import os
 
-from services.card_recognition import recognize_card_from_image
+from serializers import recognizer_serializer
+from services.card_recognition import get_text_from_image
+from services.nlp_text_comparation import CardMatcher
+from utils import Logger
 
 app = Flask(__name__)
 # Diretório para armazenar as imagens
@@ -30,6 +34,10 @@ PASSWORD = "password"
 
 MOCK = False
 
+card_matcher = CardMatcher()
+card_matcher.cache_card_embeddings()
+
+logger = Logger()
 
 # Função para verificar se o arquivo tem uma extensão permitida
 def allowed_file(filename):
@@ -69,6 +77,7 @@ def upload_file():
         return jsonify({"message": "No selected file"}), 400
 
     if file and allowed_file(file.filename):
+
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
         return (
@@ -110,11 +119,14 @@ def uploaded_file(filename):
 @app.route("/card/recognize", methods=["POST"])
 @requires_auth
 def card_recognize():
+    start_time = time.time()
+    logger.info("Request to recognize card received")
+
     if MOCK:
-        print("Mocking response")
+        logger.info("Mocking response")
         with open("data/mock.json") as f:
             response = json.load(f)["search_result"]
-            print(response)
+            logger.info(response)
         return jsonify(response), 201
 
     if "file" not in request.files:
@@ -126,12 +138,21 @@ def card_recognize():
         return jsonify({"message": "No selected file"}), 400
 
     if file and allowed_file(file.filename):
+
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config["RECOGNIZE_FOLDER"], filename))
-        print(f"File saved: {file}")
-        file_path = os.path.join(app.config["RECOGNIZE_FOLDER"], filename)
-        print(f"File path: {file_path}")
-        response = recognize_card_from_image(file_path)
+        logger.info(f"File saved as {filename}")
+
+        data_text = get_text_from_image(
+            os.path.join(app.config["RECOGNIZE_FOLDER"], filename)
+        )
+        cards = card_matcher.find_closest_cards(data_text)
+
+        logger.info(cards)
+        response = recognizer_serializer(cards)
+        logger.info(response)
+
+        logger.info(f"Elapsed time: {time.time() - start_time}")
         return jsonify(response), 201
     else:
         return jsonify({"message": "Invalid file type"}), 400
