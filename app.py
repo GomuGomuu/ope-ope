@@ -1,3 +1,4 @@
+import json
 import random
 
 from flask import (
@@ -26,6 +27,8 @@ ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
 # Usuário e senha para autenticação simples
 USERNAME = "admin"
 PASSWORD = "password"
+
+MOCK = False
 
 
 # Função para verificar se o arquivo tem uma extensão permitida
@@ -85,7 +88,7 @@ def show_images():
 
 @app.route("/images/json")
 def show_images_json():
-    image_list = os.listdir(app.config["UPLOAD_FOLDER"])
+    image_list = os.listdir(app.config["RECOGNIZE_FOLDER"])
     """
     [
         {"photo_1729642334264.jpg": "http://127.0.0.1:5000/uploads/photo_1729642334264.jpg"},
@@ -101,12 +104,19 @@ def show_images_json():
 # Endpoint para servir as imagens
 @app.route("/uploads/<filename>")
 def uploaded_file(filename):
-    return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
+    return send_from_directory(app.config["RECOGNIZE_FOLDER"], filename)
 
 
 @app.route("/card/recognize", methods=["POST"])
 @requires_auth
-def card_reconize():
+def card_recognize():
+    if MOCK:
+        print("Mocking response")
+        with open("data/mock.json") as f:
+            response = json.load(f)["search_result"]
+            print(response)
+        return jsonify(response), 201
+
     if "file" not in request.files:
         return jsonify({"message": "No file part in the request"}), 400
 

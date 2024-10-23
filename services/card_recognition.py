@@ -127,7 +127,7 @@ def slugify(image_path):
 
 
 def recognize_card_from_image(image_path):
-    MODEL_CACHE_NAME = "x4y42fs4u9sd"
+    MODEL_CACHE_NAME = "4r4rxradrhod"
 
     _data = extract_text_from_image(image_path)
     _result = get_card_from_ia(cache_name=MODEL_CACHE_NAME, data_fragment=_data)
@@ -152,39 +152,5 @@ def recognize_card_from_image(image_path):
 
 
 if __name__ == "__main__":
-    # just call once to create the cache, because the api has a token limit per hour
-    # model_cache_name = create_cache("merry-cards-cache")
-    model_cache_name = "x4y42fs4u9sd"
-
-    data = extract_text_from_image("../data/photo_1729643874479.jpg")
-    result = get_card_from_ia(cache_name=model_cache_name, data_fragment=data)
-
-    with open("../data/extracted_data.json", "w") as file:
-        file.write(
-            json.dumps(
-                {
-                    "extracted_data": json.loads(data),
-                    "search_result": json.loads(result),
-                },
-                indent=4,
-            )
-        )
-
-    # Terminal output:
-    """
-        Extracting text from image: ../images/20241020_211624.jpg
-        Card extracted: {"attack": 2000, "counter": 1000, "description": "On Play Look at 5 cards from the top of your deck; reveal up to 1 {Straw Hat Crew} type card other than [Nami] and add it to your hand. Then, place the rest at the bottom of your deck in any order.", "name": "Nami", "tribe": "Straw Hat Crew", "type": "CHARACTER"}
-
-        Retrieving cache: limi2u15lp0c
-        Cache retrieved: cachedContents/limi2u15lp0c
-        Model created: genai.GenerativeModel(
-            model_name='models/gemini-1.5-flash-001',
-            generation_config={},
-            safety_settings={},
-            tools=None,
-            system_instruction=None,
-            cached_content=cachedContents/limi2u15lp0c
-        )
-        Extracting card from cache: limi2u15lp0c
-        Card found: {"possible_cards": [{"api_url": "http://172.24.160.1:8000/cards/OP01-016/", "confidence": 1.0}, {"api_url": "http://172.24.160.1:8000/cards/OP03-030/", "confidence": 1.0}, {"api_url": "http://172.24.160.1:8000/cards/OP05-064/", "confidence": 1.0}, {"api_url": "http://172.24.160.1:8000/cards/OP06-025/", "confidence": 1.0}, {"api_url": "http://172.24.160.1:8000/cards/OP07-022/", "confidence": 1.0}]}
-    """
+    print("Initializing cache")
+    print(f"Cache name: {create_cache("Ope-Ope-no-Mi")}")
