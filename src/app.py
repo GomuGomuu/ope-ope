@@ -152,9 +152,8 @@ def card_recognize():
         )
         cards = card_matcher.find_closest_cards(data_text)
 
-        logger.info(cards)
+        logger.info(f"Cards found: {len(cards)}")
         response = recognizer_serializer(cards)
-        logger.info(response)
 
         logger.info(f"Elapsed time: {time.time() - start_time}")
         return jsonify(response), 201
