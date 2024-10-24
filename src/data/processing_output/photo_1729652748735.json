@@ -1,0 +1,81 @@
+{
+    "extracted_data": {
+        "attack": 1000,
+        "description": "This card can attack on the turn in which it is played. \nOnce Per Turn When your opponent activates a Blocker, K.O. up to 1 of your opponent's Characters with 8000 power or less.",
+        "name": "Monkey.D.Luffy",
+        "tribe": "Straw Hat Crew",
+        "type": "Character"
+    },
+    "search_result": {
+        "possible_cards": [
+            {
+                "api_url": "http://10.0.0.128:8000/cards/ST10-006/",
+                "confidence": 1.0,
+                "illustrations": [
+                    {
+                        "code": "ST10-006_p1",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-70c762a2-d30c-46bd-a9c5-10cb8c32cb25-st10-006-p1-png-240619.png"
+                    },
+                    {
+                        "code": "ST10-006",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-bbfbbe68-9a46-405b-8023-9d7120d6c507-st10-006-png-240619.png"
+                    }
+                ],
+                "name": "Monkey.D.Luffy",
+                "slug": "ST10-006"
+            },
+            {
+                "api_url": "http://10.0.0.128:8000/cards/OP07-109/",
+                "confidence": 0.6666666666666666,
+                "illustrations": [
+                    {
+                        "code": "OP07-109_p1",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-5d8317e8-6d13-4b77-a853-9f5c31f5e58e-op07-109-p1-png-240619.png"
+                    },
+                    {
+                        "code": "OP07-109",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-974a9eca-6740-4d37-94f9-78afa80a8bd7-op07-109-png-240619.png"
+                    }
+                ],
+                "name": "Monkey.D.Luffy",
+                "slug": "OP07-109"
+            },
+            {
+                "api_url": "http://10.0.0.128:8000/cards/OP07-033/",
+                "confidence": 0.6666666666666666,
+                "illustrations": [
+                    {
+                        "code": "OP07-033",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-5382e20b-0c18-4f42-8db9-eee8f5c8c585-op07-033-png-240619.png"
+                    }
+                ],
+                "name": "Monkey.D.Luffy",
+                "slug": "OP07-033"
+            },
+            {
+                "api_url": "http://10.0.0.128:8000/cards/OP07-073/",
+                "confidence": 0.6666666666666666,
+                "illustrations": [
+                    {
+                        "code": "OP07-073",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-c17ea3e1-7f9d-4434-8d6c-dcb30a1cf8cf-op07-073-png-240619.png"
+                    }
+                ],
+                "name": "Monkey.D.Luffy",
+                "slug": "OP07-073"
+            },
+            {
+                "api_url": "http://10.0.0.128:8000/cards/OP07-091/",
+                "confidence": 0.6666666666666666,
+                "illustrations": [
+                    {
+                        "code": "OP07-091",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-15bc38f8-86ff-403c-90c8-de1bcba1ac12-op07-091-png-240619.png"
+                    }
+                ],
+                "name": "Monkey.D.Luffy",
+                "slug": "OP07-091"
+            }
+        ]
+    }
+}

@@ -1,9 +1,6 @@
 version: "3.9"
 services:
   ope-ope:
-    build:
-      context: .
-      dockerfile: Dockerfile
     ports:
       - "5000:5000"
     volumes:
