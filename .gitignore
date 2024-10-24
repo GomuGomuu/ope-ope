@@ -53,6 +53,6 @@ dmypy.json
 # Ignore local configuration files
 *.local
 
+src/uploads/recognize/
 uploads/recognize/
-
 .env

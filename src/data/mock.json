@@ -1,0 +1,74 @@
+{
+    "extracted_data": {
+        "attack": 8000,
+        "cost": 7,
+        "description": "On Play / When Attacking DON!! -1 (You may return the specified number of DON!! cards from your field to your DON!! deck.): Up to 1 of your Leader gains +1000 power until the start of your next turn.",
+        "name": "Eustass \"Captain\" Kid",
+        "tribe": "Kid Pirates",
+        "type": "CHARACTER"
+    },
+    "search_result": {
+        "possible_cards": [
+            {
+                "api_url": "http://10.0.0.128:8000/cards/OP05-074/",
+                "confidence": 1.0,
+                "illustrations": [
+                    {
+                        "code": "OP05-074_p3",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-ad322c94-73e6-4a04-8906-937d01e457b0-op05-074-p3-png-240619.png"
+                    },
+                    {
+                        "code": "OP05-074_p2",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-d3e00ac4-40c9-4d4b-893c-16c59d3157bf-op05-074-p2-png-240619.png"
+                    },
+                    {
+                        "code": "OP05-074",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-5b52c26c-cdc4-4cf4-971a-48d4d86f222d-op05-074-png-240619.png"
+                    },
+                    {
+                        "code": "OP05-074_p1",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-d27e9e4d-bf2a-48fd-871b-ae8e2ce9bd28-op05-074-p1-png-240619.png"
+                    }
+                ],
+                "name": "Eustass\"Captain\"Kid",
+                "slug": "OP05-074"
+            },
+            {
+                "api_url": "http://10.0.0.128:8000/cards/ST10-013/",
+                "confidence": 0.8,
+                "illustrations": [
+                    {
+                        "code": "ST10-013_p1",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-2efb1c0c-cacd-47de-9ab0-20ea702ca982-st10-013-p1-png-240619.png"
+                    },
+                    {
+                        "code": "ST10-013",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-3af204c9-0bb3-4ff3-a66c-950cc8a93eb6-st10-013-png-240619.png"
+                    }
+                ],
+                "name": "Eustass\"Captain\"Kid",
+                "slug": "ST10-013"
+            },
+            {
+                "api_url": "http://10.0.0.128:8000/cards/OP01-051/",
+                "confidence": 0.6,
+                "illustrations": [
+                    {
+                        "code": "OP01-051_p2",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-6f8e6534-c9d5-4915-aab6-651003efe3e8-op01-051-p2-png-240619.png"
+                    },
+                    {
+                        "code": "OP01-051",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-e9e252e8-1835-4036-a990-f027514e0dd2-op01-051-png-240619.png"
+                    },
+                    {
+                        "code": "OP01-051_p1",
+                        "src": "http://10.0.0.128:8000/media/img/2024-10-20-b1cf6a5d-2ee6-4c11-a3c0-ef59d3a63c33-op01-051-p1-png-240619.png"
+                    }
+                ],
+                "name": "Eustass\"Captain\"Kid",
+                "slug": "OP01-051"
+            }
+        ]
+    }
+}
