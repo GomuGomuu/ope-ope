@@ -15,7 +15,6 @@ ruff = "^0.7.0"
 python-dotenv = "^1.0.1"
 sentence-transformers = "^3.2.1"
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
