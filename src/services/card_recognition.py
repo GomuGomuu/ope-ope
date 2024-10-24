@@ -8,7 +8,7 @@ import typing_extensions as typing
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from google.generativeai import caching
 
-from src.utils import Logger
+from utils import Logger
 
 load_dotenv()
 

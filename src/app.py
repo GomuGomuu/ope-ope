@@ -16,13 +16,16 @@ from functools import wraps
 import os
 
 from serializers import recognizer_serializer
-from src.services.card_recognition import get_text_from_image
-from src.services.nlp_text_comparation import CardMatcher
+from services.card_recognition import get_text_from_image
+from services.nlp_text_comparation import CardMatcher
 from utils import Logger
 
 app = Flask(__name__)
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # Diretório para armazenar as imagens
-UPLOAD_FOLDER = "uploads"
+UPLOAD_FOLDER = f"{BASE_DIR}/uploads"
 RECOGNIZE_FOLDER = f"{UPLOAD_FOLDER}/recognize"
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 app.config["RECOGNIZE_FOLDER"] = RECOGNIZE_FOLDER
@@ -175,5 +178,8 @@ if __name__ == "__main__":
     if not os.path.exists(UPLOAD_FOLDER):
         os.makedirs(UPLOAD_FOLDER)
 
+    if not os.path.exists(RECOGNIZE_FOLDER):
+        os.makedirs(RECOGNIZE_FOLDER)
+
     # Faz o servidor Flask escutar em todas as interfaces de rede
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True, use_reloader=True)

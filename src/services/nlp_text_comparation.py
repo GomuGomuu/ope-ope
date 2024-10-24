@@ -2,7 +2,7 @@ import json
 import os
 from sentence_transformers import SentenceTransformer, util
 
-from src.utils import Logger
+from utils import Logger
 
 logger = Logger()
 

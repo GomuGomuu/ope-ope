@@ -1,11 +1,15 @@
 version: "3.9"
 services:
   ope-ope:
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "5000:5000"
     volumes:
       - ./uploads:/app/uploads
-      - ./data:/app/data
+      - ./src/data:/app/data
+      - ./src:/app
     environment:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - MOCK=${MOCK}
